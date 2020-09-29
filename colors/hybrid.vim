@@ -119,6 +119,7 @@ let s:palette.gui.darkblue   = { 'dark' : "#00005f"        , 'light' : "#d7ffd7"
 let s:palette.gui.darkcyan   = { 'dark' : "#005f5f"        , 'light' : "#005f00" }
 let s:palette.gui.darkred    = { 'dark' : "#5f0000"        , 'light' : "#d7d7ff" }
 let s:palette.gui.darkpurple = { 'dark' : "#5f005f"        , 'light' : "#5f005f" }
+let s:palette.gui.sss = { 'dark' : "#6c7a80"        , 'light' : "#5f005f" }
 
 if exists("g:hybrid_custom_term_colors") && g:hybrid_custom_term_colors == 1
   let s:cterm_foreground = "15"  " White
@@ -171,6 +172,7 @@ let s:palette.cterm.darkblue   = { 'dark' : "17"               , 'light' : "194"
 let s:palette.cterm.darkcyan   = { 'dark' : "24"               , 'light' : "22"  }
 let s:palette.cterm.darkred    = { 'dark' : "52"               , 'light' : "189" }
 let s:palette.cterm.darkpurple = { 'dark' : "53"               , 'light' : "53"  }
+let s:palette.cterm.sss = { 'dark' : "53"               , 'light' : "53"  }
 
 "}}}
 " Formatting Options:"{{{
@@ -244,6 +246,7 @@ call s:build_prim('fg', 'darkblue')
 call s:build_prim('fg', 'darkcyan')
 call s:build_prim('fg', 'darkred')
 call s:build_prim('fg', 'darkpurple')
+call s:build_prim('fg', 'sss')
 
 exe "let s:fmt_none = ' gui=NONE".          " cterm=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold = ' gui=NONE".s:b.      " cterm=NONE".s:b.      " term=NONE".s:b    ."'"
@@ -300,7 +303,7 @@ exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
 exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 "   Incsearch"
-exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! LineNr"        .s:fg_sss   .s:bg_none        .s:fmt_none
 exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! MatchParen"    .s:fg_background  .s:bg_changebg    .s:fmt_none
 exe "hi! ModeMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
